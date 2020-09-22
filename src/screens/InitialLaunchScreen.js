@@ -48,7 +48,7 @@ export class InitialLaunchScreen extends Component {
         <View style={styles.buttonsContainer}>
           <Image
             style={styles.instaLogo}
-            source={require('../assets/instagramLogo.png')}
+            source={require('../assets/images/instagramLogo.png')}
           />
           <View style={styles.ButtonItemContainer}>
             <PrimaryButton
