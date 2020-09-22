@@ -1,11 +1,12 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import SplashScreen from './src/screens/SplashScreen';
+import InitialLaunchScreen from './src/screens/InitialLaunchScreen';
 
 const App: () => React$Node = () => {
   return (
     <View style={styles.container}>
-      <SplashScreen />
+      <InitialLaunchScreen />
     </View>
   );
 };
