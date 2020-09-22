@@ -1,19 +1,20 @@
 import React, {Component} from 'react';
 import {Text, View, TouchableOpacity, StyleSheet} from 'react-native';
-import {colors} from '../config/colors';
+import {colors} from '../config/Colors';
 
 export class PrimaryButton extends Component {
   constructor(props) {
     super(props);
   }
   render() {
-    const {buttonLabel, buttonBgColor, buttonTextColor} = this.props;
-    const buttonText = buttonLabel;
-    const buttonBg = buttonBgColor;
-    const labelColor = buttonTextColor;
+    const {color, buttonBg, text} = this.props;
+    const buttonText = text;
+    const buttonBgColor = buttonBg;
+    const labelColor = color;
     return (
       <View style={styles.container}>
-        <TouchableOpacity style={[styles.button, {backgroundColor: buttonBg}]}>
+        <TouchableOpacity
+          style={[styles.button, {backgroundColor: buttonBgColor}]}>
           <Text style={[styles.text, {color: labelColor}]}>{buttonText}</Text>
         </TouchableOpacity>
       </View>
