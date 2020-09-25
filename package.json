@@ -10,8 +10,12 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-community/cameraroll": "^4.0.0",
+    "@react-native-community/picker": "^1.8.0",
     "react": "16.13.1",
     "react-native": "0.63.2",
+    "react-native-camera": "git+https://git@github.com/react-native-community/react-native-camera.git",
+    "react-native-color-matrix-image-filters": "^5.2.5",
     "react-native-vector-icons": "^7.1.0"
   },
   "devDependencies": {
