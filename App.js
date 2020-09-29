@@ -9,7 +9,7 @@ import GalleryScreen from './src/screens/GalleryScreen';
 const App: () => React$Node = () => {
   return (
     <View style={styles.container}>
-      <GalleryScreen />
+      <SearchScreen />
     </View>
   );
 };

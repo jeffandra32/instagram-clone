@@ -31,7 +31,7 @@ export class ApplyEffectScreen extends Component {
     this.state = {effect: 'original'};
   }
 
-  effectOnPress = effect => {
+  effectOnPress = (effect) => {
     this.setState({effect: effect});
   };
 
