@@ -12,17 +12,56 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import {colors} from '../config/Colors';
 
 const DATA = [
-  {id: 'jhgjfhd787', Title: 'Gabigol', subTitle: 'O pai ta ON'},
-  {id: 'fdgdfgdfgf', Title: 'Bruno Henrique', subTitle: 'Lorem Ipum'},
-  {id: 'cvbfddffff', Title: 'Everton Ribeiro', subTitle: 'Lorem Ipum'},
+  {
+    id: '2154',
+    Title: 'minsaude',
+    subTitle: 'Ministério da Saude',
+    img: require('./../assets/images/min.jpg'),
+  },
+  {
+    id: '7485',
+    Title: 'unicefBrasil',
+    subTitle: 'UNICEF Brasil',
+    img: require('./../assets/images/unicef.png'),
+  },
+];
+
+const DATA_RECENTE = [
+  {
+    id: '1254',
+    Title: 'windersonnunes',
+    subTitle: 'Winderson Nunes Boi',
+    img: require('./../assets/images/winder.jpg'),
+  },
+  {
+    id: '4541',
+    Title: 'luisasonza',
+    subTitle: 'Luiza Sonza Safada',
+    img: require('./../assets/images/luiz.jpg'),
+  },
+  {
+    id: '4546',
+    Title: 'vitao',
+    subTitle: 'Vitão Talarico',
+    img: require('./../assets/images/vit.jpg'),
+  },
+  {
+    id: '1245',
+    Title: 'senaitalo',
+    subTitle: 'Italo Sena',
+    img: require('./../assets/images/italo.png'),
+  },
+  {
+    id: '5458',
+    Title: 'gabigol',
+    subTitle: 'Gabriel Barbosa',
+    img: require('./../assets/images/gabi.jpg'),
+  },
 ];
 export class SearchScreen extends Component {
   renderItem = ({item}) => (
     <View style={styles.itemContainer}>
-      <Image
-        style={styles.image}
-        source={require('./../assets/images/face.png')}
-      />
+      <Image style={styles.image} source={item.img} />
       <View style={styles.itemRightWrapper}>
         <Text style={styles.title}>{item.Title}</Text>
         <Text style={styles.subTitle}>{item.subTitle}</Text>
@@ -37,26 +76,26 @@ export class SearchScreen extends Component {
           <View style={styles.topHeaderWrapper}>
             <View style={styles.headerTopLeftWrapper}>
               <Icon size={25} name="arrow-left" />
-              <TextInput placeholder="Search" />
-            </View>
-            <View>
-              <Icon size={25} name="times" />
+              <TextInput placeholder="Pesquisar" />
             </View>
           </View>
           <View style={styles.subHeaderWrapper}>
             <TouchableOpacity style={styles.selectedCategoryItem}>
-              <Text style={styles.titleSelected}>TOP</Text>
+              <Text style={styles.titleSelected}>PRINCIPAIS</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.categoryItem}>
-              <Text style={styles.title}>ACCOUNTS</Text>
+              <Text style={styles.title}>CONTAS</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.categoryItem}>
               <Text style={styles.title}>TAGS</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.categoryItem}>
-              <Text style={styles.title}>PLACES</Text>
+              <Text style={styles.title}>LOCAIS</Text>
             </TouchableOpacity>
           </View>
+        </View>
+        <View style={styles.containerTitle}>
+          <Text style={styles.titleContainer}>Enfrentamento da COVID-19</Text>
         </View>
         <FlatList
           data={DATA}
@@ -65,6 +104,23 @@ export class SearchScreen extends Component {
           }}
           renderItem={this.renderItem}
         />
+
+        <View style={styles.containerTitle}>
+          <Text style={styles.titleContainer}>Recentes</Text>
+        </View>
+        <FlatList
+          data={DATA_RECENTE}
+          keyExtractor={(item, index) => {
+            index.toString();
+          }}
+          renderItem={this.renderItem}
+        />
+        <View style={styles.footer}>
+          <Icon color={colors.gray} size={25} name="home" />
+          <Icon color={colors.black} size={25} name="search" />
+          <Icon color={colors.gray} size={25} name="plus-square" />
+          <Icon color={colors.gray} size={25} name="heart" />
+        </View>
       </View>
     );
   }
@@ -75,6 +131,14 @@ export default SearchScreen;
 export const styles = StyleSheet.create({
   container: {
     display: 'flex',
+  },
+  containerTitle: {
+    display: 'flex',
+    margin: '2%',
+  },
+  titleContainer: {
+    fontWeight: 'bold',
+    fontSize: 14,
   },
   headerWrapper: {
     display: 'flex',
@@ -90,6 +154,7 @@ export const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
+    marginRight: '5%',
   },
   subHeaderWrapper: {
     display: 'flex',
@@ -117,7 +182,7 @@ export const styles = StyleSheet.create({
     color: colors.gray,
   },
   titleSelected: {
-    fontWeight: '700',
+    fontWeight: '600',
   },
   itemContainer: {
     display: 'flex',
@@ -126,14 +191,24 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   image: {
-    width: 75,
-    height: 75,
+    width: 50,
+    height: 50,
     borderRadius: 50,
+    borderBottomWidth: 2,
   },
   itemRightWrapper: {
     marginLeft: 10,
   },
   subTitle: {
     color: colors.gray,
+  },
+  footer: {
+    display: 'flex',
+    flexDirection: 'row',
+    bottom: 0,
+    justifyContent: 'space-between',
+    padding: 10,
+    borderTopColor: colors.gray1,
+    borderTopWidth: 1,
   },
 });

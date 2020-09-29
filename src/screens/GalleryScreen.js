@@ -120,7 +120,7 @@ export class GalleryScreen extends Component {
           </View>
           <View>
             <View>
-              <Text style={styles.headerSubTitle}>Next</Text>
+              <Text style={styles.headerSubTitle}>Avançar</Text>
             </View>
           </View>
         </View>
@@ -140,13 +140,13 @@ export class GalleryScreen extends Component {
         </ScrollView>
         <View style={styles.footer}>
           <View style={styles.pickedFooterSection}>
-            <Text style={styles.pickedFooterTitle}>GALLERY</Text>
+            <Text style={styles.pickedFooterTitle}>GALERIA</Text>
           </View>
           <View style={styles.footerSection}>
-            <Text style={styles.footerTitle}>PHOTO</Text>
+            <Text style={styles.footerTitle}>FOTO</Text>
           </View>
           <View style={styles.footerSection}>
-            <Text style={styles.footerTitle}>VIDEO</Text>
+            <Text style={styles.footerTitle}>VÍDEO</Text>
           </View>
         </View>
       </View>
